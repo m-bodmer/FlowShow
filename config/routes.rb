@@ -1,7 +1,9 @@
 Flowshow::Application.routes.draw do
-  get "profile/main"
+  resources :softwares
 
   devise_for :users
+
+  get "profile/main"
 
   get "home/index"
 

@@ -5,9 +5,32 @@
 			<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
 		</div>
 	</div>
-	<div id="side_bar" class="side_bar border"></div>
+<!-- 	<div id="side_bar" class="side_bar border"></div> -->
 	<div id="main_container" class="main_container border">
-		<h2>Add a new program</h2>
+		<% unless @software.blank? %>
+			<!-- Display list of software -->
+			<table>
+				<% @software.each do |software| %>
+				  <tr>
+				    <td><%= software.name %></td>
+				    <td><%= software.description %></td>
+				    <td><%= link_to 'Show', software %></td>
+				    <td><%= link_to 'Edit', edit_software_path(software) %></td>
+				    <td><%= link_to 'Destroy', software, :confirm => 'Are you sure?',
+				                                     	 :method => :delete %></td>
+				  </tr>
+				<% end %>
+			</table>
+
+			<h2>Add another program</h2>
+			<%= link_to 'New Program', new_software_path %>
+		
+		<% else %>
+			<!-- Allow user to add a new program -->
+			<h2>Add a new program</h2>
+			<%= link_to "My Software List", softwares_path %>
+		<% end %>
+		
 	</div>
 <% else %>
 	<h1>Please sign in</h1>
