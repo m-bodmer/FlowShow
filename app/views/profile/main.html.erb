@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+	<div id="header" class="header border">
+		<h1 class="left">Welcome <%= current_user.email %> </h1>
+		<div id="sign_out" class="left">
+			<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+		</div>
+	</div>
+	<div id="side_bar" class="side_bar border"></div>
+	<div id="main_container" class="main_container border">
+		<h2>Add a new program</h2>
+	</div>
+<% else %>
+	<h1>Please sign in</h1>
+	<%= link_to('Login', new_user_session_path)  %> 
+<% end %>
+
+

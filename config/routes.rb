@@ -1,8 +1,25 @@
 Flowshow::Application.routes.draw do
+  get "profile/main"
+
+  devise_for :users
+
   get "home/index"
 
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
+  # The root of your site routed with "root"
+  root :to => 'home#index'
+
+  # Redirect the defult login path of devise
+  devise_scope :user do
+    get "/login" => "profile#main"
+  end
+
+  namespace :user do
+    root :to => "welcome#index"
+  end
+
+  match 'profile' => 'profile#main'
+
+  match 'user' => 'profile#main'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
@@ -48,12 +65,5 @@ Flowshow::Application.routes.draw do
   #     resources :products
   #   end
 
-  # The root of your site routed with "root"
-  root :to => 'home#index'
-
   # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
 end
