@@ -1,7 +1,3 @@
-h1 {
-	
-}
-
 .left {
 	float: left;
 }
@@ -15,6 +11,287 @@ h1 {
     top: 10px;
 }
 
-.signin_button {
- 
+.signup_button:hover {
+	text-decoration: none;
+}
+.signup_button:active {
+	position: relative;
+	top: 11px;
+}
+
+.big_button {
+ 	width: 100px;
+ 	height: 40px;
+ 	color: #000000;
+ 	font-family: "Nevis";
+    font-size: 22px;
+ 	background-color: #bed95f;
+ 	margin-left: 50px;
+ 	bottom: 6px;
+ 	position: relative;
+}
+
+.small_button {
+	width: 100%;
+	font-family: "Nevis";
+    font-size: 10px;
+    background-color: #bed95f;
+}
+
+@font-face {
+    font: {
+       family: 'Ostrich';
+       weight: 'normal';
+       style: 'normal';
+    }
+    src: asset-url('ostrich-bold-webfont', font) format('embedded-opentype'),
+         asset-url('ostrich-bold-webfont.woff', font) format('woff'),
+         asset-url('ostrich-bold-webfont.ttf', font) format('truetype'),
+         asset-url('ostrich-bold-webfont.svg', font) format('svg')
+}
+
+@font-face {
+    font: {
+       family: 'Nevis';
+       weight: 'normal';
+       style: 'normal';
+    }
+    src: asset-url('nevis.ttf', font) format('truetype')
+}
+
+/* CSS Resets */
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,img,ins,q,small,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;margin:0;padding:0;font-size:100%}article,aside,figure,figure img,figcaption,hgroup,footer,header,nav,section,video,object{display:block}a img{border:0}figure{position:relative}figure img{width:100%}
+
+
+/* ==================================================================================================================== */
+/* ! The 1140px Grid V2 by Andy Taylor \ http://cssgrid.net \ http://www.twitter.com/andytlr \ http://www.andytlr.com   */
+/* ==================================================================================================================== */
+.background {
+	background-color: #011640;
+	color: #FFFFFF;
+}
+
+.header {
+	margin-top: 25px;
+	margin-bottom: 50px;
+}
+
+.logo {
+	background-color: #1747a6;
+	font-family: "Ostrich";
+	font-size: 80px;
+	height: 97px;
+}
+
+.logo h1 {
+	margin-top: 16px;
+	margin-left: 30px;
+	font-weight: normal;
+}
+
+.login {
+	background-color: #1747a6;
+}
+
+.login a, a:visited {
+	font-family: "Nevis";
+	font-size: 36px;
+	color: #FFFFFF;
+	text-decoration: none;
+	margin-left: 33px;
+}
+
+.login a:hover {
+	color: #bed95f;
+}
+
+.login_form {
+	font-family: "Nevis";
+	font-weight: bold;
+}
+
+.small_field {
+	width: 95%;
+}
+
+.main_details {
+	font-size: 46px;
+	font-family: "Nevis";
+	margin-left: 25px;
+	font-weight: normal !important;
+	margin-bottom: 18px;
+	margin-top: 10px;
+}
+
+.sub_details {
+	font-size: 28px;
+	font-family: "Nevis";
+	margin-left: 25px;
+	font-weight: normal !important;
+}
+
+.omniauth h1 {
+	font-size: 48px;
+	font-family: "Nevis";
+	margin-left: 25px;
+	margin-top: 20px;
+}
+
+.margin_left {
+	margin-left: 25px;	
+}
+
+.margin_top {
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+.mainContainer {
+	margin-top: 48px;
+	background-color: #1747a6;
+}
+
+.twitter_login a {
+	margin-top: 5px;
+	margin-bottom: 13px;
+}
+
+.footer {
+	margin-top: 48px;
+}
+
+.footer .row {
+	background-color: #1747a6;	
+}
+
+.footer .copyright {
+	margin-left: 25px;
+}
+
+.footer h2 {
+	font-size: 20px;
+	font-family: "Nevis";	
+}
+
+.container {
+padding-left: 20px;
+padding-right: 20px;
+}
+
+.row {
+width: 100%;
+max-width: 1140px;
+min-width: 755px;
+margin: 0 auto;
+overflow: hidden;
+}
+
+.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol {
+margin-right: 3.8%;
+float: left;
+min-height: 1px;
+}
+
+.row .onecol {
+width: 4.85%;
+}
+
+.row .twocol {
+width: 13.45%;
+}
+
+.row .threecol {
+width: 22.05%;
+}
+
+.row .fourcol {
+width: 30.75%;
+}
+
+.row .fivecol {
+width: 39.45%;
+}
+
+.row .sixcol {
+width: 48%;
+}
+
+.row .sevencol {
+width: 56.75%;
+}
+
+.row .eightcol {
+width: 65.4%;
+}
+
+.row .ninecol {
+width: 74.05%;
+}
+
+.row .tencol {
+width: 82.7%;
+}
+
+.row .elevencol {
+width: 91.35%;
+}
+
+.row .twelvecol {
+width: 100%;
+float: left;
+}
+
+.last {
+margin-right: 0px;
+}
+
+img, object, embed {
+max-width: 100%;
+}
+
+img {
+	height: auto;
+}
+
+
+/* Smaller screens */
+
+@media only screen and (max-width: 1023px) {
+
+	body {
+	font-size: 0.8em;
+	line-height: 1.5em;
+	}
+	
+	}
+
+
+/* Mobile */
+
+@media handheld, only screen and (max-width: 767px) {
+
+	body {
+	font-size: 16px;
+	-webkit-text-size-adjust: none;
+	}
+	
+	.row, body, .container {
+	width: 100%;
+	min-width: 0;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	}
+	
+	.row .onecol, .row .twocol, .row .threecol, .row .fourcol, .row .fivecol, .row .sixcol, .row .sevencol, .row .eightcol, .row .ninecol, .row .tencol, .row .elevencol, .row .twelvecol {
+	width: auto;
+	float: none;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+	}
+
 }
