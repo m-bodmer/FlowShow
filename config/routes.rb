@@ -4,7 +4,9 @@ Flowshow::Application.routes.draw do
     match '/user/connect/twitter' => Devise::Twitter::Rack::Connect
   end
 
-  resources :softwares
+  resources :softwares do 
+    resources :plugins
+  end
 
   devise_for :users
 

@@ -3,4 +3,6 @@ class Software < ActiveRecord::Base
 
   validates :name,  :presence => true
   validates :description, :presence => true
+
+  has_many :plugins, :dependent => :destroy
 end

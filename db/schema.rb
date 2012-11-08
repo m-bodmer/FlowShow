@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121107163402) do
+ActiveRecord::Schema.define(:version => 20121108181050) do
+
+  create_table "plugins", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "url"
+    t.integer  "software_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "plugins", ["software_id"], :name => "index_plugins_on_software_id"
 
   create_table "softwares", :force => true do |t|
     t.string   "name"

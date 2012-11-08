@@ -2,13 +2,34 @@
 <div class="mainContainer background">
 	<div class="software_title container">
 	  <h1 class="bold">
-	  <%= @software.name.titleize %>
-	</h1>
+		  <%= @software.name.titleize %>
+	  </h1>
+	  <hr />
 	</div>
 
 	<div class="software_desc container">
-	  Description:</br>
-	  <%= @software.description %>
+	    <h2>Description:</h2>
+	    <div class="text">
+		  <%= @software.description %>
+		</div>
+		<hr />
+	</div>
+
+	<div class="container">
+		<h2 class="titles">Plugins</h2>
+		
+		<% if @software.plugins.blank? %>
+			<p class="text">No Plugins</p>
+		<% else %>
+			<%= render @software.plugins %>
+		<% end %>
+		<br />
+		<hr />
+	</div>
+
+	<div class="add_plugin container">
+		<h2 class="titles">Add a Plugin:</h2>
+		<%= render "plugins/form" %>
 	</div>
 
 	<div class="nav_links container">

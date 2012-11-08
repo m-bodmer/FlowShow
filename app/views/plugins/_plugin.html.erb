@@ -1,0 +1,32 @@
+<div class="container plugin_list">
+	<p>
+	  <br />
+	  <b class="subtitles2">Plugin:</b>
+	  <div class="text">
+      	<%= plugin.name%>
+	  </div>
+	  <br />
+	</p>
+
+	<p>
+	  <b class="subtitles2">Description:</b>
+	  <div class="text">
+	  	<%= plugin.description %>
+	  </div>
+	  <br />
+	</p>
+
+	<p>
+	  <b class="subtitles2">Url:</b>
+	  <div class="text">
+	  	<%= plugin.url %>
+	  </div>
+	</p>
+	<br />
+	<p>
+	  <%= link_to 'Delete Plugin', [plugin.software, plugin],
+	               :confirm => 'Are you sure?',
+	               :method => :delete, :class => 'nav_links2' %>
+	</p>
+	<br />
+</div>
