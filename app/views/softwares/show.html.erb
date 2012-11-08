@@ -1,16 +1,18 @@
-<body style="background: #EEEEEE;">
 <p id="notice"><%= notice %></p>
+<div class="mainContainer background">
+	<div class="software_title container">
+	  <h1 class="bold">
+	  <%= @software.name.titleize %>
+	</h1>
+	</div>
 
-<p>
-  <b class="bold">Name:</b>
-  <%= @software.name %>
-</p>
+	<div class="software_desc container">
+	  Description:</br>
+	  <%= @software.description %>
+	</div>
 
-<p>
-  <b>Description:</b>
-  <%= @software.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_software_path(@software) %> |
-<%= link_to 'Back to Profile', profile_path %>
+	<div class="nav_links container">
+		<%= link_to 'Edit', edit_software_path(@software) %> |
+		<%= link_to 'Back to Profile', profile_path %>
+	</div>
+</div>

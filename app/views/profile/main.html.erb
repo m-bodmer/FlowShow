@@ -1,38 +1,50 @@
 <% if user_signed_in? %>
-	<div id="header" class="header border">
-		<h1 class="left">Welcome <%= current_user.email %> </h1>
-		<div class="header_link">
-			<a href="#">My Settings</a>
-		</div>
-		<div id="sign_out" class="left header_link">
-			<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+	<div class="container mainContainer">
+		<div class="row">
+			<div id="header" class="header eightcol">
+				<h1 class="left">Welcome <%= current_user.email %> </h1>
+				
+				<div id="sign_out" class="header_link fourcol last">
+						<a href="#" class='a_link'>My Settings</a>
+					</br>
+					<%= link_to 'Sign out', destroy_user_session_path, :method => :delete, :class=>'a_link' %>
+				</div>
+			</div>
 		</div>
 	</div>
-	<div id="main_container" class="main_container border">
+	<div id="main_container" class="container border mainContainer">
 		<% unless @software.blank? %>
 			<!-- Display list of software -->
-			<table>
-				<% @software.each do |software| %>
-				  <tr>
-				    <td><%= software.name %></td>
-				    <td><%= software.description %></td>
-				    <td><%= link_to 'Show Details', software %></td>
-				    <td><%= link_to 'Edit Details', edit_software_path(software) %></td>
-				    <td><%= link_to 'Delete', software, :confirm => 'Are you sure?',
-				                                     	 :method => :delete %></td>
-				  </tr>
-				<% end %>
-			</table>
-
-			<h2>Add another program</h2>
-			<%= link_to 'New Program', new_software_path %>
-		
+			<div class="software_list">
+				<table class="table">
+					<thead>
+						<th class="table_header">Software Name</th>
+						<th class="table_header">Description</th>
+						<th class="table_header2">Actions</th>
+					</thead>
+					<% @software.each do |software| %>
+						<tr>
+						    <td><%= software.name.titleize %></td>
+						    <td><%= software.description %></td>
+							    <td><%= link_to 'Show Details', software , :class => 'software_actions'%></td>
+							    <td><%= link_to 'Edit Details', edit_software_path(software), :class => 'software_actions' %></td>
+							    <td><%= link_to 'Delete', software, :confirm => 'Are you sure you want to delete?',
+							                                     	 :method => :delete, :class => 'software_actions' %></td>
+					    </tr>
+					<% end %>
+				</table>
+				<div class="add_program">
+					<h2>Add another program</h2>
+					<%= link_to 'New Program', new_software_path, :class => 'round_button' %>
+				</div>
+			</div>
 		<% else %>
 			<!-- Allow user to add a new program -->
-			<h2>Add a new program</h2>
-			<%= link_to 'New Program', new_software_path %>
+			<div class="software_list">
+				<h2>Add a new program</h2>
+				<%= link_to 'New Program', new_software_path %>
+			</div>
 		<% end %>
-		
 	</div>
 <% else %>
 	<h1>Please sign in</h1>
