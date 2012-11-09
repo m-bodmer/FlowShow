@@ -4,6 +4,7 @@
 	  <h1 class="bold">
 		  <%= @software.name.titleize %>
 	  </h1>
+	  <%= @software.tags.map { |t| t.name }.join(", ") %>
 	  <hr />
 	</div>
 
